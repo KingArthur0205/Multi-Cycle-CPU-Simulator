@@ -1,0 +1,205 @@
+{
+  "tests": [
+    {
+      "name": "Task 1 Complex",
+      "setup": "./mipssim 1 .github/tests/memfile-complex.txt .github/tests/reg_init.txt",
+      "run": "cat task_1.out",
+      "input": "",
+      "output": "opcode,type\r\n001000,4\r\n001000,4\r\n001000,4\r\n001000,4\r\n001000,4\r\n000100,2\r\n100011,0\r\n100011,0\r\n000000,1\r\n101011,0\r\n001000,4\r\n001000,4\r\n001000,4\r\n001000,4\r\n000010,3\r\n111111,6",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Task 2",
+      "setup": "./mipssim 2 .github/tests/memfile-complex.txt .github/tests/reg_init.txt",
+      "run": "cat task_2.out",
+      "input": "",
+      "output": "state,new_state,opcode,type,RegDst,RegWrite,ALUSrcA,MemRead,MemWrite,MemtoReg,IorD,IRWrite,PCWrite,PCWriteCond,ALUOp,ALUSrcB,PCSource\r\n0,1,0,1,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n0,1,35,0,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n0,1,43,0,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n0,1,4,2,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n0,1,2,3,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n0,1,63,6,0,0,0,1,0,0,0,1,1,0,1,1,0\r\n1,6,0,1,0,0,0,0,0,0,0,0,0,0,1,3,0\r\n1,2,35,0,0,0,0,0,0,0,0,0,0,0,1,3,0\r\n1,2,43,0,0,0,0,0,0,0,0,0,0,0,1,3,0\r\n1,8,4,2,0,0,0,0,0,0,0,0,0,0,1,3,0\r\n1,9,2,3,0,0,0,0,0,0,0,0,0,0,1,3,0\r\n1,10,63,6,0,0,0,0,0,0,0,0,0,0,1,3,0",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+
+    {
+      "name": "Task 3",
+      "setup": "./mipssim 3 .github/tests/no-I-type-test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_3.out",
+      "input": "",
+      "output": "59a16030b6154c2b54effbd27bca76fa82bebe1f  task_3.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Task 4",
+      "setup": " ./mipssim 4 .github/tests/memfile-complex.txt .github/tests/reg_init.txt",
+      "run": "cat task_4.out",
+      "input": "",
+      "output": "state,new_state,opcode,type,RegDst,RegWrite,ALUSrcA,MemRead,MemWrite,MemtoReg,IorD,IRWrite,PCWrite,PCWriteCond,ALUOp,ALUSrcB,PCSource\n0,1,0,1,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,35,0,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,43,0,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,4,2,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,2,3,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,63,6,0,0,0,1,0,0,0,1,1,0,1,1,0\n0,1,8,4,0,0,0,1,0,0,0,1,1,0,1,1,0\n1,6,0,1,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,2,35,0,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,2,43,0,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,8,4,2,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,9,2,3,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,10,63,6,0,0,0,0,0,0,0,0,0,0,1,3,0\n1,11,8,4,0,0,0,0,0,0,0,0,0,0,1,3,0\n2,3,35,0,0,0,1,0,0,0,0,0,0,0,1,2,0\n2,5,43,0,0,0,1,0,0,0,0,0,0,0,1,2,0\n3,4,0,1,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,35,0,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,43,0,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,4,2,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,2,3,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,63,6,0,0,0,1,0,0,1,0,0,0,1,0,0\n3,4,8,4,0,0,0,1,0,0,1,0,0,0,1,0,0\n4,0,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,35,0,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,43,0,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,4,2,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,2,3,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,63,6,0,1,0,0,0,1,0,0,0,0,1,0,0\n4,0,8,4,0,1,0,0,0,1,0,0,0,0,1,0,0\n5,0,0,1,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,35,0,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,43,0,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,4,2,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,2,3,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,63,6,0,0,0,0,1,0,1,0,0,0,1,0,0\n5,0,8,4,0,0,0,0,1,0,1,0,0,0,1,0,0\n6,7,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,35,0,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,43,0,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,4,2,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,2,3,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,63,6,0,0,1,0,0,0,0,0,0,0,0,0,0\n6,7,8,4,0,0,1,0,0,0,0,0,0,0,0,0,0\n7,0,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,35,0,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,43,0,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,4,2,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,2,3,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,63,6,1,1,0,0,0,0,0,0,0,0,1,0,0\n7,0,8,4,1,1,0,0,0,0,0,0,0,0,1,0,0\n8,0,0,1,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,35,0,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,43,0,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,4,2,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,2,3,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,63,6,0,0,1,0,0,0,0,0,0,1,2,0,1\n8,0,8,4,0,0,1,0,0,0,0,0,0,1,2,0,1\n9,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,35,0,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,43,0,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,4,2,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,2,3,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,63,6,0,0,0,0,0,0,0,0,1,0,1,0,2\n9,0,8,4,0,0,0,0,0,0,0,0,1,0,1,0,2\n10,10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,35,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,63,6,0,0,0,0,0,0,0,0,0,0,0,0,0\n10,10,8,4,0,0,0,0,0,0,0,0,0,0,0,0,0\n11,12,0,1,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,35,0,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,43,0,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,4,2,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,2,3,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,63,6,0,0,1,0,0,0,0,0,0,0,1,2,0\n11,12,8,4,0,0,1,0,0,0,0,0,0,0,1,2,0\n12,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,35,0,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,43,0,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,4,2,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,2,3,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,63,6,0,1,0,0,0,0,0,0,0,0,1,0,0\n12,0,8,4,0,1,0,0,0,0,0,0,0,0,1,0,0",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Task 5 ADDI Trace",
+      "setup": "./mipssim 5 .github/tests/ADDI_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "4223b0a0afd8f24fb7664a3f864a758cd52193df  task_5.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 ADDI Regfile",
+      "setup": "./mipssim 5 .github/tests/ADDI_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "96183bae92eb30bd455d2def2eff18fc327f6e82  task_5_reg.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 BEQ Trace",
+      "setup": "./mipssim 5 .github/tests/BEQ_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "da86647f52dbb862da36af91fd2075ba2c10adea  task_5.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 BEQ Regfile",
+      "setup": "./mipssim 5 .github/tests/BEQ_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "dbe0cf4f97409c2b2c1c0d228b5cb1173ac78727  task_5_reg.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 J Trace",
+      "setup": "./mipssim 5 .github/tests/J_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "e931002043c58b25813398d5e525914295f04c2e  task_5.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 J Regfile",
+      "setup": "./mipssim 5 .github/tests/J_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "dbe0cf4f97409c2b2c1c0d228b5cb1173ac78727  task_5_reg.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 LW Trace",
+      "setup": "./mipssim 5 .github/tests/LW_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "56e6c2f34c2021dd46894ba486e177b2e8ecd9ea  task_5.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 LW Regfile",
+      "setup": "./mipssim 5 .github/tests/LW_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "ccebb0598aaadb829c4767474beaf87baf4ae175  task_5_reg.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 SLT Trace",
+      "setup": "./mipssim 5 .github/tests/SLT_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "f6f3191b49dd0db4a712b205ca4188a09cc4cbe4  task_5.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 SLT Regfile",
+      "setup": "./mipssim 5 .github/tests/SLT_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "8867f49b5df0b71927dd5954e347359b1423ff98  task_5_reg.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 SW Trace",
+      "setup": "./mipssim 5 .github/tests/SW_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "d8b38ad0f70d9907a2815974bdd683ab7ca2c971  task_5.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 SW Regfile",
+      "setup": "./mipssim 5 .github/tests/SW_test.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "f408bd9c50fddd1b8642a2e87d9c387570a537a1  task_5_reg.out",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "Task 5 Moderate Trace",
+      "setup": "./mipssim 5 .github/tests/pipe_complex_test.txt .github/tests/reg_init.txt",
+      "run": "cat task_5.out",
+      "input": "",
+      "output": "cycle,RegDst,RegWrite,ALUSrcA,MemRead,MemWrite,MemtoReg,IorD,IRWrite,PCWrite,PCWriteCond,ALUOp,ALUSrcB,PCSource,pc,IR,A,B,ALUOut,MDR\r\n0,0,0,0,1,0,0,0,1,1,0,1,1,0,4,12843040,0,0,4,0\r\n1,0,0,0,0,0,0,0,0,0,0,1,3,0,4,12843040,12,4294967292,4294959236,0\r\n2,0,0,1,0,0,0,0,0,0,0,0,0,0,4,12843040,12,4294967292,8,0\r\n3,1,1,0,0,0,0,0,0,0,0,1,0,0,4,12843040,12,4294967292,0,0\r\n4,0,0,0,1,0,0,0,1,1,0,1,1,0,8,10790954,12,4294967292,8,0\r\n5,0,0,0,0,0,0,0,0,0,0,1,3,0,8,10790954,113,4,4294877360,0\r\n6,0,0,1,0,0,0,0,0,0,0,0,0,0,8,10790954,113,4,0,0\r\n7,1,1,0,0,0,0,0,0,0,0,1,0,0,8,10790954,113,4,12,0\r\n8,0,0,0,1,0,0,0,1,1,0,1,1,0,12,12843040,113,4,12,0\r\n9,0,0,0,0,0,0,0,0,0,0,1,3,0,12,12843040,12,4294967292,4294959244,0\r\n10,0,0,1,0,0,0,0,0,0,0,0,0,0,12,12843040,12,4294967292,8,0\r\n11,1,1,0,0,0,0,0,0,0,0,1,0,0,12,12843040,12,4294967292,8,0\r\n12,0,0,0,1,0,0,0,1,1,0,1,1,0,16,10790954,12,4294967292,16,0\r\n13,0,0,0,0,0,0,0,0,0,0,1,3,0,16,10790954,113,4,4294877368,0\r\n14,0,0,1,0,0,0,0,0,0,0,0,0,0,16,10790954,113,4,0,0\r\n15,1,1,0,0,0,0,0,0,0,0,1,0,0,16,10790954,113,4,20,0\r\n16,0,0,0,1,0,0,0,1,1,0,1,1,0,20,4227858432,113,4,20,0\r\n17,0,0,0,0,0,0,0,0,0,0,1,3,0,20,4227858432,0,0,20,0",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "Task 5 Moderate Regfile",
+      "setup": "./mipssim 5 .github/tests/pipe_complex_test.txt .github/tests/reg_init.txt",
+      "run": "cat task_5_reg.out",
+      "input": "",
+      "output": "0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8\r\n0,1,2,4294967292,4,113,12,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 4
+    },
+    {
+      "name": "Task 5 Complex Trace",
+      "setup": "./mipssim 5 .github/tests/memfile-complex.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5.out",
+      "input": "",
+      "output": "6afe254b7575820e4d5ea1393eae35cbc1290864  task_5.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 9
+    },
+    {
+      "name": "Task 5 Complex Regfile",
+      "setup": "./mipssim 5 .github/tests/memfile-complex.txt .github/tests/reg_init.txt",
+      "run": "sha1sum task_5_reg.out",
+      "input": "",
+      "output": "da9d7d84ca6923bc6d8270eb93e38699a90fd6b2  task_5_reg.out",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 9
+    }
+  ]
+}

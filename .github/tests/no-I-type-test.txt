@@ -1,0 +1,9 @@
+# instructions start here (first line is address 0)
+00000000000000000011000000100000 # 0: ADD $6 $0 $0 # Add r0 and r0, to start counting from 0
+00000000110000010011100000101010 # 1: SLT $7 $6 $1 # Use SLT to check if counting val is less than 1
+00010000111000000000000000000100 # 2: BEQ $7 $0 4  # Loop, until counting value is not less than 1
+10001100101010000000000000000011 # 3: LW  $8 3($5) # Read a mem val, $8 = [mem val]
+10101100101010000000000000000111 # 4: SW  $8 7($5) # Write mem val to mem addr + 1, [mem val + 1] = $8
+00000000110000010011000000100000 # 5: ADD $6 $6 $1 # Increment
+00001000000000000000000000000001 # 6: J 1          # Jump back to SLT
+11111100000000000000000000000000 # 7: EOP          # This is the "Done"

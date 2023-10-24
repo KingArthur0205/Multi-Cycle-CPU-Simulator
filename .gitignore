@@ -1,0 +1,11 @@
+cmake-build-debug/*
+CMakeCache.txt
+CTestTestfile.cmake
+CMakeFiles/*
+Testing/*
+Makefile
+mipssim
+cmake_install.cmake
+*.out
+build/*
+build
